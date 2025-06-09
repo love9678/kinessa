@@ -1,24 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import os
+import asyncio
+import logging
 import sys
-import json
-import random
-import time
-import shutil
-import re
-import base64
-import socket
-import subprocess
-import platform
-from datetime import datetime
-import uuid
-from pathlib import Path
-import urllib.request
-import ssl
-import tempfile
-import argparse
+from os import getenv
+
+from aiogram import Bot, Dispatcher, html
+from aiogram.client.default import DefaultBotProperties
+from aiogram.enums import ParseMode
+from aiogram.filters import CommandStart
+from aiogram.types import Message
 
 # 全局变量
 INSTALL_DIR = Path.home() / ".agsb"  # 用户主目录下的隐藏文件夹，避免root权限
